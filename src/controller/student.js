@@ -1,5 +1,5 @@
-const mentorModel = require("../models/mentor");
-const studentModel = require("../models/student");
+const mentorModel = require("../models/Mentor");
+const studentModel = require("../models/Student");
 
 const getStudents = async (req, res) => {
   try {

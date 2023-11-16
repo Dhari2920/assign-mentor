@@ -1,12 +1,9 @@
-const mongoose = require('mongoose')
+const mongoose = require('./index')
+const mentorSchema = new mongoose.Schema({
+    Name:{type:String,required:[true," Name is required"]},
+    Email:{type:String,required:[true,"Email is required"]},
+    studentlist:{type:Array}
+})
 
-
-try{
-    mongoose.connect(`${process.env.dbUrl}/${process.env.dbName}`)
-    console.log("Database Connected Sucessfully")
-    }
-catch (error) {
-    console.log(error)
-}
-
-module.exports=mongoose
+const mentorModel = mongoose.model('mentors',mentorSchema)
+module.exports  = mentorModel
